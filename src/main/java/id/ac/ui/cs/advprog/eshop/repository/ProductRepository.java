@@ -41,6 +41,12 @@ public class ProductRepository {
             existingProduct.setProductQuantity(updatedProduct.getProductQuantity());
             return existingProduct;
         }
-        return null;
+        throw new NoSuchElementException("Product ID " + updatedProduct.getProductId() + " not found");
     }
+
+    public boolean delete(String id) {
+        return productData.removeIf(product -> product.getProductId().equals(id));
+    }
+
+    
 }
