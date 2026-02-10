@@ -31,11 +31,11 @@ public class ProductRepository {
         }
         throw new NoSuchElementException("Product ID " + id + " not found");
     }
-    
+
 
     public Product update(Product updatedProduct) {
         Product existingProduct = findById(updatedProduct.getProductId());
-        
+
         if (existingProduct != null) {
             existingProduct.setProductName(updatedProduct.getProductName());
             existingProduct.setProductQuantity(updatedProduct.getProductQuantity());
