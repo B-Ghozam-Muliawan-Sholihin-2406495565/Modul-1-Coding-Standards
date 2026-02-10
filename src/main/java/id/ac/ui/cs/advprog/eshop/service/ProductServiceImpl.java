@@ -18,6 +18,15 @@ public class ProductServiceImpl implements ProductService {
         return product;
     }
 
+    @Override
+    public Product edit(Product product) {
+        return productRepository.update(product);
+    }
+
+    @Override
+    public void delete(String id) {
+        productRepository.delete(id);
+    }
 
     @Override
     public List<Product> findAll() {
@@ -26,4 +35,10 @@ public class ProductServiceImpl implements ProductService {
         productIterator.forEachRemaining(allProduct::add);
         return allProduct;
     }
+
+    @Override
+    public Product findById(String id) {
+        return productRepository.findById(id);
+    }
+
 }
