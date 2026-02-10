@@ -33,7 +33,7 @@ public class ProductRepository {
     }
     
 
-    public Product update(Product updatedProduct) {
+    public Product edit(Product updatedProduct) {
         Product existingProduct = findById(updatedProduct.getProductId());
         
         if (existingProduct != null) {
@@ -46,7 +46,5 @@ public class ProductRepository {
 
     public boolean delete(String id) {
         return productData.removeIf(product -> product.getProductId().equals(id));
-    }
-
-    
+    }  
 }

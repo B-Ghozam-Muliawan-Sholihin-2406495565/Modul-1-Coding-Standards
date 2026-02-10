@@ -41,6 +41,7 @@ public class CreateProductFunctionalTest {
     @Test
     void createProductAndCheck_IsCorrect(ChromeDriver driver) throws Exception {
         driver.get(baseUrl + "/product/list");
+        
         WebElement create = driver.findElement(By.linkText("Create Product"));
         create.click();
 
@@ -48,16 +49,16 @@ public class CreateProductFunctionalTest {
         String name = "product test";
         nameInput.sendKeys(name);
 
-        WebElement QuantityInput = driver.findElement(By.id("quantityInput"));
+        WebElement quantityInput = driver.findElement(By.id("quantityInput"));
         String quantity = "67";
-        QuantityInput.sendKeys(quantity);
+        quantityInput.sendKeys(quantity);
 
         WebElement submit = driver.findElement(By.className("btn-primary"));
         submit.click();
 
         String nameInList = driver.findElement(By.className("product-name")).getText();
         String quantInList = driver.findElement(By.className("product-quantity")).getText();
-
+        
         assertEquals(name, nameInList);
         assertEquals(quantity, quantInList);
     }

@@ -23,6 +23,10 @@ public class ProductController {
 
     @PostMapping("/create")
     public String createProductPost(@ModelAttribute Product product, Model model) {
+        if (product == null) {
+            model.addAttribute("errorMessage", "Product name cannot be empty and Product Quantity must not be negative! ");
+            return "createProduct";
+        }
         service.create(product);
         return "redirect:list";
     }
@@ -35,7 +39,11 @@ public class ProductController {
     }
 
     @PostMapping("/edit")
-    public String editProductPost(@ModelAttribute Product product) {
+    public String editProductPost(@ModelAttribute Product product, Model model) {
+        if (product == null) {
+            model.addAttribute("errorMessage", "Product name cannot be empty and Product Quantity must not be negative! ");
+            return "editProduct";
+        }
         service.edit(product);
         return "redirect:list"; 
     }

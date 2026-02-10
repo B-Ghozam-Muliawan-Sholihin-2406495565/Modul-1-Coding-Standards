@@ -1,0 +1,6 @@
+## Refleksi 1
+- 
+
+## Refleksi 2
+- Dengan adanya exercise ini, saya bisa lebih mengerti dan bisa menerapkan prinsip clean code secara langsung. Menurut saya, unit test perlu ditambah sebanyak sampai coveragenya 85% atau 90%, sehingga kita bisa mengetahui bahwa mayoritas kode yang kita buat sudah dicek dan benar-benar jalan untuk testcase yang kita jalankan. Tapi 100% test coverage hanya memverifikasi kalau kode sudah sesuai dengan test case kita, jadi belum tentu source code sudah bugfree / error free, karena bisa aja ada kode input validation yang belum tertulis, yang otomatis belum dites, sehingga memunculkah celah pada source code.
+- Kalau dibuat test baru dengan setup dan instance variable yang sama, maka kualitas dan cleanliness kode akan menurun, karena kode jadi akan terduplikat, dan melanggar konsep clean code "Dont Repeat Yourself" sehingga kode yang terduplikat menjadi redundant, serta jika ada kode yang duplikat di 2 file atau lebih, lalu ada update dalam source code, maka kita harus mengupdate setiap testnya. Solusinya kita bisa menggunakan konsep inheritance atau abstract class, dimana setup dan instantiate variables bisa dilakukan di class tersebut, lalu test-test selanjutnya tinggal meng-inherit abstract class tadi. 
